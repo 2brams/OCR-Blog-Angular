@@ -1,17 +1,22 @@
  <div class="list-group">
-   <a href="#" class="list-group-item "
+   <div class="list-group-item"
      [ngClass]="{'list-group-item-success':loveIts>0, 'list-group-item-danger':loveIts<0}">
      <div class="list-group-item-heading">
-       <h5 class="pull-right">{{date|date: 'd/MM/yyyy HH:mm'}}</h5>
+       <h5 class="pull-right">{{created_at|date: 'd/MM/yyyy HH:mm'}}</h5>
        <h4>{{title}}</h4>
      </div>
 
      <p class="list-group-item-text">{{content}}</p><br>
 
      <div class="row">
-       <button type="button" class="btn btn-success btn-space" (click)="onAdd()">Love it</button>
-       <button type="button" class="btn btn-danger btn-space" (click)="onRemove()">Don't love it</button>
+       <div class="col-md-6">
+         <button type="button" class="btn btn-success btn-space" (click)="onAddLoveIts()">Love it</button>
+         <button type="button" class="btn btn-danger btn-space " (click)="onRemoveLoveIts()">Don't love it</button>
+       </div>
+       <div class="col-md-offset-4 col-md-2">
+         <button type="button" class="btn btn-danger btn-space" (click)="onRemovePost()">Supprimer le post</button>
+       </div>
      </div>
 
-   </a>
+    </div>
  </div>
